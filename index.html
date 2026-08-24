@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>教资备考工作台 · 初中</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="seal">教</span>
+        <div class="brand-text">
+          <strong>教资备考台</strong>
+          <small>初中 · 笔试</small>
+        </div>
+      </div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="practice">刷题</button>
+        <button class="nav-item" data-view="wrong">错题本</button>
+        <button class="nav-item" data-view="dashboard">进度看板</button>
+        <button class="nav-item" data-view="mock">整卷模考</button>
+        <button class="nav-item" data-view="notes">资料库</button>
+        <button class="nav-item" data-view="settings">设置</button>
+      </nav>
+      <div class="sidebar-foot">
+        <button id="btn-export" class="ghost-btn" title="导出全部数据为 JSON">导出数据</button>
+        <button id="btn-import" class="ghost-btn" title="导入 JSON 文件（合并或替换）">导入数据</button>
+        <input type="file" id="file-input" accept=".json,application/json" hidden />
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h1 id="view-title">刷题</h1>
+        <div class="topbar-meta" id="topbar-meta"></div>
+      </header>
+      <section id="app" class="view"></section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="js/seed.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
